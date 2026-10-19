@@ -6,88 +6,88 @@
     • Nella dettaglio: bottone o back → Navigator.pop
 
     main()
-    └─ runApp(const RubricaApp())
+      └─ runApp(const RubricaApp())
 
     Contatto
-    ├─ final String nome
-    ├─ final String numero
-    ├─ final String email
-    └─ const Contatto({required this.nome, required this.numero, required this.email})
+      ├─ final String nome
+      ├─ final String numero
+      ├─ final String email
+      └─ const Contatto({required this.nome, required this.numero, required this.email})
 
     RubricaApp (StatelessWidget)
-    ├─ const RubricaApp({super.key})
-    └─ build() → MaterialApp
-        ├─ title: 'Rubrica'
-        ├─ debugShowCheckedModeBanner: false
-        ├─ theme: ThemeData
-        │   ├─ colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal)
-        │   └─ useMaterial3: true
-        └─ home: RubricaPage
+      ├─ const RubricaApp({super.key})
+      └─ build() → MaterialApp
+          ├─ title: 'Rubrica'
+          ├─ debugShowCheckedModeBanner: false
+          ├─ theme: ThemeData
+          │   ├─ colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal)
+          │   └─ useMaterial3: true
+          └─ home: RubricaPage
 
     RubricaPage (StatelessWidget)
-    ├─ const RubricaPage({super.key})
-    ├─ static const _contatti = [Contatto(...), ... almeno 5]
-    └─ build()
-        ├─ final c = Theme.of(context).colorScheme
-        └─ Scaffold
-            ├─ AppBar
-            │   ├─ centerTitle: true
-            │   ├─ title: Text('Rubrica')
-            │   ├─ backgroundColor: c.primary
-            │   └─ foregroundColor: c.onPrimary
-            └─ body: ListView.builder
-                ├─ padding: EdgeInsets.all(12)
-                ├─ itemCount: _contatti.length
-                └─ itemBuilder: (context, index)
-                    ├─ final contatto = _contatti[index]
-                    └─ Card
-                        └─ ListTile
-                            ├─ leading: CircleAvatar
-                            │   ├─ backgroundColor: c.primaryContainer
-                            │   ├─ foregroundColor: c.onPrimaryContainer
-                            │   └─ child: Text(contatto.nome[0])
-                            ├─ title: Text(contatto.nome)
-                            ├─ subtitle: Text(contatto.numero)
-                            ├─ trailing: Icon(Icons.chevron_right)
-                            └─ onTap: () { Navigator.push(context, MaterialPageRoute → DettaglioPage(contatto: contatto)) }
+      ├─ const RubricaPage({super.key})
+      ├─ static const _contatti = [Contatto(...), ... almeno 5]
+      └─ build()
+          ├─ final c = Theme.of(context).colorScheme
+          └─ Scaffold
+              ├─ AppBar
+              │   ├─ centerTitle: true
+              │   ├─ title: Text('Rubrica')
+              │   ├─ backgroundColor: c.primary
+              │   └─ foregroundColor: c.onPrimary
+              └─ body: ListView.builder
+                  ├─ padding: EdgeInsets.all(12)
+                  ├─ itemCount: _contatti.length
+                  └─ itemBuilder: (context, index)
+                      ├─ final contatto = _contatti[index]
+                      └─ Card
+                          └─ ListTile
+                              ├─ leading: CircleAvatar
+                              │   ├─ backgroundColor: c.primaryContainer
+                              │   ├─ foregroundColor: c.onPrimaryContainer
+                              │   └─ child: Text(contatto.nome[0])
+                              ├─ title: Text(contatto.nome)
+                              ├─ subtitle: Text(contatto.numero)
+                              ├─ trailing: Icon(Icons.chevron_right)
+                              └─ onTap: () { Navigator.push(context, MaterialPageRoute → DettaglioPage(contatto: contatto)) }
 
     DettaglioPage (StatelessWidget)
-    ├─ final Contatto contatto
-    ├─ const DettaglioPage({super.key, required this.contatto})
-    └─ build()
-        ├─ final c = Theme.of(context).colorScheme
-        ├─ final t = Theme.of(context).textTheme
-        └─ Scaffold
-            ├─ AppBar
-            │   ├─ centerTitle: true
-            │   ├─ title: Text('Dettaglio contatto')
-            │   ├─ backgroundColor: c.primary
-            │   └─ foregroundColor: c.onPrimary
-            └─ body: Padding
-                └─ Column (crossAxisAlignment: stretch)
-                    ├─ SizedBox(height: 16)
-                    ├─ Center
-                    │   └─ CircleAvatar (radius: 60, colori da c)
-                    │       └─ child: Text(contatto.nome[0], style: t.displayMedium)
-                    ├─ SizedBox(height: 16)
-                    ├─ Text(contatto.nome, style: t.headlineMedium)
-                    ├─ SizedBox(height: 24)
-                    ├─ Card
-                    │   └─ Column
-                    │       ├─ ListTile
-                    │       │   ├─ leading: Icon(Icons.phone)
-                    │       │   ├─ title: Text(contatto.numero)
-                    │       │   └─ subtitle: Text('Telefono')
-                    │       ├─ Divider
-                    │       └─ ListTile
-                    │           ├─ leading: Icon(Icons.email)
-                    │           ├─ title: Text(contatto.email)
-                    │           └─ subtitle: Text('Email')
-                    ├─ SizedBox(height: 24)
-                    └─ FilledButton.icon
-                        ├─ onPressed: Navigator.pop(context)
-                        ├─ icon: Icon(Icons.arrow_back)
-                        └─ label: Text('Torna indietro')
+      ├─ final Contatto contatto
+      ├─ const DettaglioPage({super.key, required this.contatto})
+      └─ build()
+          ├─ final c = Theme.of(context).colorScheme
+          ├─ final t = Theme.of(context).textTheme
+          └─ Scaffold
+              ├─ AppBar
+              │   ├─ centerTitle: true
+              │   ├─ title: Text('Dettaglio contatto')
+              │   ├─ backgroundColor: c.primary
+              │   └─ foregroundColor: c.onPrimary
+              └─ body: Padding
+                  └─ Column (crossAxisAlignment: stretch)
+                      ├─ SizedBox(height: 16)
+                      ├─ Center
+                      │   └─ CircleAvatar (radius: 60, colori da c)
+                      │       └─ child: Text(contatto.nome[0], style: t.displayMedium)
+                      ├─ SizedBox(height: 16)
+                      ├─ Text(contatto.nome, style: t.headlineMedium)
+                      ├─ SizedBox(height: 24)
+                      ├─ Card
+                      │   └─ Column
+                      │       ├─ ListTile
+                      │       │   ├─ leading: Icon(Icons.phone)
+                      │       │   ├─ title: Text(contatto.numero)
+                      │       │   └─ subtitle: Text('Telefono')
+                      │       ├─ Divider
+                      │       └─ ListTile
+                      │           ├─ leading: Icon(Icons.email)
+                      │           ├─ title: Text(contatto.email)
+                      │           └─ subtitle: Text('Email')
+                      ├─ SizedBox(height: 24)
+                      └─ FilledButton.icon
+                          ├─ onPressed: Navigator.pop(context)
+                          ├─ icon: Icon(Icons.arrow_back)
+                          └─ label: Text('Torna indietro')
 */
 
 import 'package:flutter/material.dart';
