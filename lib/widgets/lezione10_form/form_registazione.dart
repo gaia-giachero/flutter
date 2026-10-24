@@ -95,7 +95,7 @@ class _ValidazioneRegistrazioneState extends State<ValidazioneRegistrazione> {
                 },
                 validator: (String? value) {
                   return (value != null && value.length < 4)
-                      ? 'Do not insert a valid name.'
+                      ? 'Nome inserito troppo corto.'
                       : null;
                 },
               ),
