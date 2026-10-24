@@ -98,6 +98,23 @@ class _ShopPageState extends State<ShopPage> {
     Prodotti(nome: 'Laptop', prezzo: 500, quantita: 0),
     Prodotti(nome: 'Sedia', prezzo: 20, quantita: 0),
     Prodotti(nome: 'Maglietta', prezzo: 50, quantita: 0),
+    Prodotti(nome: 'Smartphone', prezzo: 799, quantita: 0),
+    Prodotti(nome: 'Cuffie', prezzo: 35, quantita: 0),
+    Prodotti(nome: 'Mouse', prezzo: 15, quantita: 0),
+    Prodotti(nome: 'Tastiera', prezzo: 45, quantita: 0),
+    Prodotti(nome: 'Monitor', prezzo: 180, quantita: 0),
+    Prodotti(nome: 'Tablet', prezzo: 250, quantita: 0),
+    Prodotti(nome: 'Zaino', prezzo: 40, quantita: 0),
+    Prodotti(nome: 'Scarpe', prezzo: 75, quantita: 0),
+    Prodotti(nome: 'Jeans', prezzo: 40, quantita: 0),
+    Prodotti(nome: 'Felpa', prezzo: 35, quantita: 0),
+    Prodotti(nome: 'Libro', prezzo: 18, quantita: 0),
+    Prodotti(nome: 'Lampada', prezzo: 25, quantita: 0),
+    Prodotti(nome: 'Zerbino', prezzo: 12, quantita: 0),
+    Prodotti(nome: 'Borraccia', prezzo: 15, quantita: 0),
+    Prodotti(nome: 'Orologio', prezzo: 120, quantita: 0),
+    Prodotti(nome: 'Fotocamera', prezzo: 350, quantita: 0),
+    Prodotti(nome: 'Stampante', prezzo: 90, quantita: 0),
   ];
 
   void _increment(int index) {
