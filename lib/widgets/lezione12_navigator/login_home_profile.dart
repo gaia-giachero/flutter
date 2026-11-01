@@ -64,7 +64,6 @@ class _LoginState extends State<Login> {
   String _password = '';
 
   bool _obscureText = true;
-  bool _obscureTextConferma = true;
 
   String tempPassword = '';
   String tempConfermaPassword = '';
